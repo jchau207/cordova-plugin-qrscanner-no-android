@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin 
-  xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-qrscanner" version="2.6.0">
+  xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-qrscanner-no-android" version="2.6.1">
   <name>QRScanner</name>
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
@@ -11,7 +11,7 @@
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="QRScanner">
-        <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner"/>
+        <param name="android-package" value="com.bitcoin.cordova.qrscanner.QRScanner"/>
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/*">
@@ -19,7 +19,7 @@
       <uses-feature android:name="android.hardware.camera" android:required="false" />
       <uses-feature android:name="android.hardware.camera.front" android:required="false" />
     </config-file>
-    <source-file src="src/android/QRScanner.java" target-dir="src/com/bitpay/cordova/qrscanner"/>
+    <source-file src="src/android/QRScanner.java" target-dir="src/com/bitcoin/cordova/qrscanner"/>
     <framework src="src/android/qrscanner.gradle" custom="true" type="gradleReference"/>
   </platform>
   <platform name="ios">
