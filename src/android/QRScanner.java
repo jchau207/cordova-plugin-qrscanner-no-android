@@ -75,6 +75,7 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
 
     @Override
     public boolean execute(final String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
+        /*
         this.callbackContext = callbackContext;
         try {
             if (action.equals("show")) {
@@ -219,24 +220,31 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
             callbackContext.error(QRScannerError.UNEXPECTED_ERROR);
             return false;
         }
+        */
+        return true;
     }
 
     @Override
     public void onPause(boolean multitasking) {
+        /*
         if (previewing) {
             this.appPausedWithActivePreview = true;
             this.pausePreview(null);
         }
+        */
     }
 
     @Override
     public void onResume(boolean multitasking) {
+        /*
         if (this.appPausedWithActivePreview) {
             this.appPausedWithActivePreview = false;
             this.resumePreview(null);
         }
+        */
     }
 
+    /*
     private boolean hasFlash() {
         if (flashAvailable == null) {
             flashAvailable = false;
@@ -342,7 +350,9 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
         else
             prepare(callbackContext);
     }
+    */
 
+    /*
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException {
         oneTime = false;
@@ -391,7 +401,9 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
             }
         }
     }
+    */
 
+    /*
     public boolean hasPermission() {
         for(String p : permissions)
         {
@@ -425,7 +437,7 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
         this.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                webView.getView().setBackgroundColor(Color.TRANSPARENT);
+                webView.getView().setBackgroundColor(Color.WHITE);
             }
         });
         showing = false;
@@ -478,9 +490,10 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
             scan(callbackContext);
 
     }
-
+*/
     @Override
     public void barcodeResult(BarcodeResult barcodeResult) {
+        /*
         if (this.nextScanCallback == null) {
             return;
         }
@@ -493,11 +506,13 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
         else {
             scan(this.nextScanCallback);
         }
+        */
     }
 
     @Override
     public void possibleResultPoints(List<ResultPoint> list) {
     }
+    /*
 
     // ---- BEGIN EXTERNAL API ----
     private void prepare(final CallbackContext callbackContext) {
@@ -790,4 +805,5 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
         currentCameraId = 0;
         getStatus(callbackContext);
     }
+    */
 }
